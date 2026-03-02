@@ -8,4 +8,4 @@ A little about me:
 
 
 
-A meme that captures how I currently feel about my university studies is ![](https://tenor.com/view/lizard-lizard-lizard-lizard-tom-the-lizard-hoppers-hoppers-pixar-gif-18247620511221215378)
+A meme that captures how I currently feel about my university studies is ![](https://media1.tenor.com/m/_TySLMd48JIAAAAd/lizard-lizard-lizard-lizard.gif)
