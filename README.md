@@ -29,4 +29,4 @@ But I shall **exhibit** some *creativity*
 
 
 
-![Girl relaxed](https://cdn.jsdelivr.net/gh/alohe/avatars/png/notion_6.png)
+![Cute solar system](https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyaTV4a2Q5ejlxMzV5bW9iOGl1ZHdmaTk5dXdydjhvem5wZXgweGZjMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26BGLwK0ciNMY7BaU/200w.gif)
