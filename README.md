@@ -14,7 +14,7 @@ A meme that captures how I currently feel about my university studies is:
 
 # PROJECT 1: 
 ## I like this class 
-## This is me showing two different levels of headers
+## This is me showing two # different levels of headers
 
 * Here are some unordered bullets
 * just to keep things fresh : )
