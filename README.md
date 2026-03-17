@@ -13,8 +13,8 @@ A meme that captures how I currently feel about my university studies is:
 ![](https://media1.tenor.com/m/_TySLMd48JIAAAAd/lizard-lizard-lizard-lizard.gif)
 
 # PROJECT 1: 
+## This is me showing two different levels of headers
 ## I like this class 
-## This is me showing two # different levels of headers
 
 * Here are some unordered bullets
 * just to keep things fresh : )
