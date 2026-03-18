@@ -12,7 +12,7 @@ A meme that captures how I currently feel about my university studies is:
 
 ![](https://media1.tenor.com/m/_TySLMd48JIAAAAd/lizard-lizard-lizard-lizard.gif)
 
-# PROJECT 1: 
+# Project 1: 
 ## This is me showing two different levels of headers
 ## I like this class 
 
