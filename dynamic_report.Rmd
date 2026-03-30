@@ -1,0 +1,128 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+
+
+# My Dynamic Report
+
+## WHAT THE CARD?! STATS 220 Tarot Card Observational Logging
+
+![](https://www.micechat.com/wp-content/uploads/2020/06/Dr-Facilier-Animated-The-Cards.gif)
+
+Hey! It’s me—the card shark in your soul... and what I need is *DATA*. Lots of it! By logging my daily pulls from the Golden Thread Tarot deck, we can look past the mysticism to figure out the past, present, and future through the lens of data science.
+
+This report is designed to display observational data captured over the last week. By using data science tools such as R and {ggplot2}, the project analyses patterns in the data to explore trends and generate statistical insights—such as arcana frequency and card orientation for a more definitive look at exactly what the cards have been communicating...
+
+<!-- Loading my Data in -->
+``` {css, echo=FALSE}
+h1 {
+  color: #87239d;
+}
+
+h2 {
+  color:#87239d; 
+}
+
+h3 {
+  color: #87239d; 
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fce5fc;
+  color: #DA9100;
+  line-height: 1.6;
+}
+
+```
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library(tidyverse)
+# Loading my Data in
+  csv_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vR76f2-RyEGeyxp5cItmGjBd9AlDGHMDt3Ri8fNbqboZ-U7_SbkYkqGytkSPp-oDlAhOXIZzJp7WUWB/pub?output=csv"
+    logged_data <- read_csv(csv_url)
+    
+    
+# Renaming my variables
+
+  latest_data <- logged_data %>%
+    rename(arcana = 2,
+           is_reversed = 3,
+           card_suit = 4,
+           card_number_minor = 5,
+           meaning_text_minor = 6,
+           card_number_major = 7,
+           meaning_text_major = 8)
+  
+  latest_data <- latest_data %>%
+      mutate(
+        meaning_len_minor = nchar(meaning_text_minor),
+        meaning_len_major = nchar(meaning_text_major),
+        total_meaning_len = coalesce(meaning_len_minor, meaning_len_major)
+      )
+# SUMMARY VALUES
+
+  # Summary 1: Total number of tarot observations logged
+    total_obs <- nrow(latest_data)
+  
+  # Summary 2: Average length of the card meanings recorded rounded to a whole number
+    avg_meaning_depth <- mean(latest_data$total_meaning_len, na.rm = TRUE) %>% 
+      round(0)
+    
+latest_data$arcana <- factor(latest_data$arcana)
+```
+
+### Figure 1. Frequency of Tarot Arcana Pulls
+
+```{r plot1, echo=FALSE}
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = arcana, fill = arcana)) + 
+  scale_fill_manual(values = c(Major = "#DA9100", Minor = "purple")) +
+  labs(title = "Frequency of Tarot Arcana Pulls",
+       subtitle = "Comparing the occurrence of Major vs Minor Arcana",
+       x = "Arcana Category",
+       y = "Number of Observations",
+       caption = "Source: STATS 220 Tarot Logging Form") +
+  theme_minimal()
+```
+
+This bar chart illustrates the distribution of Arcana types across the number of observations in this dataset. The data shows a much higher frequency of Minor Arcana pulls, which aligns with the larger number of Minor cards in the Golden Thread deck. 
+
+### Figure 2. Average Meaning Length vs Arcana Category
+
+```{r plot4, echo=FALSE}
+ latest_data %>%
+      ggplot(aes(x = is_reversed, fill = arcana)) +
+      geom_bar() + 
+scale_fill_manual(values = c("Major" = "#DA9100", "Minor" = "purple"))  + 
+      labs(title = "Frequency of Card Orientations",
+           subtitle = "Comparing the number of Reversed vs. Upright tarot pulls",
+           x = "Card Orientation (upright or reversed)",
+           y = "Number of Observations",
+           caption = "Source: STATS 220 Tarot Logging Form") +
+      theme_minimal()
+```
+
+This bar chart explores the relationship between card orientation and Arcana type. Interestingly, upright cards are significantly more common in this dataset, appearing in most observations regardless of whether a Major or Minor Arcana card was pulled.
+
+```{r summary values, echo=FALSE}
+
+ # Summary 1: Total number of tarot observations logged
+    total_obs <- nrow(latest_data)
+    # Summary 2: Average length of the card meanings recorded rounded to a whole number 
+    avg_meaning_depth <- mean(latest_data$total_meaning_len, na.rm = TRUE) %>% 
+      round(0)
+```
+
+### Summary Values 
+
+The total number of observations logged was `r total_obs`.
+
+The average length of card meanings was `r avg_meaning_depth`.
