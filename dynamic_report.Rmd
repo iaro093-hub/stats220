@@ -77,6 +77,7 @@ library(tidyverse)
     
 latest_data$arcana <- factor(latest_data$arcana)
 ```
+### Bar Charts 
 
 ```{r plot1, echo=FALSE}
 latest_data %>%
