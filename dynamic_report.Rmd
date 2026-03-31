@@ -32,7 +32,7 @@ h3 {
 body {
   font-family: 'Georgia', serif;
   background-color: #fce5fc;
-  color: #DA9100;
+  color: #4D3300;
   line-height: 1.6;
 }
 
@@ -78,8 +78,6 @@ library(tidyverse)
 latest_data$arcana <- factor(latest_data$arcana)
 ```
 
-### Figure 1. Frequency of Tarot Arcana Pulls
-
 ```{r plot1, echo=FALSE}
 latest_data %>%
   ggplot() +
@@ -94,8 +92,6 @@ latest_data %>%
 ```
 
 This bar chart illustrates the distribution of Arcana types across the number of observations in this dataset. The data shows a much higher frequency of Minor Arcana pulls, which aligns with the larger number of Minor cards in the Golden Thread deck. 
-
-### Figure 2. Card Orientation vs Arcana Category
 
 ```{r plot4, echo=FALSE}
  latest_data %>%
