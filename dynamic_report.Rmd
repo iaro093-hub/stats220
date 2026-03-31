@@ -100,7 +100,7 @@ This bar chart illustrates the distribution of Arcana types across the number of
       geom_bar() + 
 scale_fill_manual(values = c("Major" = "#DA9100", "Minor" = "purple"))  + 
       labs(title = "Frequency of Card Orientations",
-           subtitle = "Comparing the number of Reversed vs. Upright tarot pulls",
+           subtitle = "Comparing the number of Reversed vs. Upright tarot pulls against Arcana type",
            x = "Card Orientation (upright or reversed)",
            y = "Number of Observations",
            caption = "Source: STATS 220 Tarot Logging Form") +
