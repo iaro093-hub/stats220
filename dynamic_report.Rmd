@@ -91,7 +91,7 @@ latest_data %>%
   theme_minimal()
 ```
 
-This bar chart illustrates the distribution of Arcana types across the number of observations in this dataset. The data shows a much higher frequency of Minor Arcana pulls, which aligns with the larger number of Minor cards in the Golden Thread deck. 
+This bar chart illustrates the distribution of Arcana types across the number of observations in this dataset. We would often expect to see a much higher frequency of Minor Arcana pulls, which aligns with the larger number of Minor cards in the Golden Thread deck. 
 
 ```{r plot4, echo=FALSE}
  latest_data %>%
@@ -106,7 +106,7 @@ scale_fill_manual(values = c("Major" = "#DA9100", "Minor" = "purple"))  +
       theme_minimal()
 ```
 
-This bar chart explores the relationship between card orientation and Arcana type. Interestingly, upright cards are significantly more common in this dataset, appearing in most observations regardless of whether a Major or Minor Arcana card was pulled.
+This bar chart explores the relationship between card orientation and Arcana type.
 
 ```{r summary values, echo=FALSE}
 
