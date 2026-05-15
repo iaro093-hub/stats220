@@ -356,6 +356,27 @@ display: none;
 </div>
 
 
+<script>
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+</script>
+<style type="text/css">
+.figcaption {display: none}
+</style>
 <!-- Loading my CSS and Data -->
 <style type="text/css">
 h1 {
@@ -461,27 +482,6 @@ visualisations (encompassing recurring themes, ritualistic “power
 hours”, and the increased variability of reversed reflections)
 demonstrate how quantitative tools can surface the hidden rhythms and
 complexities of a personal practice.</p>
-<script>
-$(function() {
-  $(".level2").css('visibility', 'hidden');
-  $(".level2").first().css('visibility', 'visible');
-  $(".container-fluid").height($(".container-fluid").height() + 300);
-  $(window).on('scroll', function() {
-    $('h2').each(function() {
-      var h2Top = $(this).offset().top - $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
-        $(this).parent('div').css('visibility', 'visible');
-      } else if (h2Top > windowHeight / 2) {
-        $(this).parent('div').css('visibility', 'hidden');
-      }
-    });
-  });
-})
-</script>
-<style type="text/css">
-.figcaption {display: none}
-</style>
 </div>
 
 
